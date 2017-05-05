@@ -11,6 +11,8 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  HandlerInterceptor
+  HandlerExecutionChain
+  HandlerAdapter
   </body>
 </html>

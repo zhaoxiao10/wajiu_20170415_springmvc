@@ -4,9 +4,9 @@ package com.wajiu.demo;
  * Created by Administrator on 2017/4/15 0015.
  */
 
+import com.wajiu.annotation.Controller;
+import com.wajiu.annotation.RequestMapping;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Scope("prototype")
