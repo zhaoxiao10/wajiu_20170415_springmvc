@@ -47,7 +47,7 @@ public class DispatcherServlet extends HttpServlet {
         // 建立映射关系
         handerMap();
         // 实现注入
-        //ioc();
+        ioc();
     }
     /**
      * 扫描包下的所有文件
@@ -117,7 +117,7 @@ public class DispatcherServlet extends HttpServlet {
                         if(ctvalue.equals("")){
                             handerMap.put(rmvalue, method);
                         }else{
-                            handerMap.put("/" + ctvalue + "/" + rmvalue, method);
+                            handerMap.put(rmvalue, method);
                         }
                     } else {
                         continue;
@@ -164,7 +164,7 @@ public class DispatcherServlet extends HttpServlet {
         String context = req.getContextPath();
         String path = url.replace(context, "");
         Method method = (Method) handerMap.get(path);
-        HelloWorldController controller = (HelloWorldController) instanceMap.get(path.split("/")[0]);
+        HelloWorldController controller = (HelloWorldController) instanceMap.get(path.split("/")[1]);
         try {
             method.invoke(controller, new Object[] {});
         } catch (IllegalAccessException e) {
